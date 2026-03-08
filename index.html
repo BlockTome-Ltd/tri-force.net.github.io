@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tri-Force | Computer Recycling & Repair Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #1a5f2a 0%, #2d8a3e 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #90EE90;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a5f2a 0%, #2d8a3e 50%, #1a5f2a 100%);
+            color: white;
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #1a5f2a;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Recycling Section */
+        #recycling {
+            background: #f8fdf8;
+        }
+
+        .recycling-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .recycling-text h3 {
+            font-size: 1.5rem;
+            color: #1a5f2a;
+            margin-bottom: 1rem;
+        }
+
+        .recycling-text p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .feature-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .feature-list li::before {
+            content: "♻";
+            position: absolute;
+            left: 0;
+            color: #2d8a3e;
+            font-size: 1.2rem;
+        }
+
+        .recycling-visual {
+            background: linear-gradient(135deg, #2d8a3e 0%, #1a5f2a 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            color: white;
+        }
+
+        .recycling-visual .icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .recycling-visual h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Repair Section */
+        #repair {
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-color: #2d8a3e;
+        }
+
+        .service-card .icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: #1a5f2a;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-top: 1rem;
+            text-align: left;
+        }
+
+        .service-card ul li {
+            padding: 0.5rem 0;
+            color: #555;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-card ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2d8a3e;
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #1a5f2a 0%, #2d8a3e 100%);
+            color: white;
+            text-align: center;
+        }
+
+        #contact .section-title h2 {
+            color: white;
+        }
+
+        #contact .section-title p {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-item p {
+            opacity: 0.9;
+        }
+
+        /* Service Area Route */
+        .service-area {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .service-area h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .route-path {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin: 0 auto;
+            max-width: 500px;
+        }
+
+        .route-stop {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stop-dot {
+            width: 18px;
+            height: 18px;
+            background: white;
+            border: 3px solid #90EE90;
+            border-radius: 50%;
+        }
+
+        .route-stop span {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .route-line {
+            flex: 1;
+            height: 3px;
+            background: #90EE90;
+            margin-bottom: 1.5rem;
+        }
+
+        .route-note {
+            margin-top: 1rem;
+            opacity: 0.85;
+            font-size: 0.95rem;
+        }
+
+        .service-area-map {
+            margin-top: 2rem;
+            border-radius: 15px;
+            overflow: hidden;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .service-area-map iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background: #0d3015;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .recycling-content {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero {
+                padding: 8rem 1rem 4rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="logo-icon">🔺</span>
+                <span>Tri-Force</span>
+            </div>
+            <ul>
+                <li><a href="#recycling">Recycling</a></li>
+                <li><a href="#repair">Repair Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Technology Preservation & Repair</h1>
+        <p>Giving computers and electronics a second life through responsible recycling and expert repair services. We prioritize preservation over destruction.</p>
+    </section>
+
+    <section id="recycling">
+        <div class="section-title">
+            <h2>Computer Recycling</h2>
+            <p>Preservation-focused recycling that honors technology's legacy</p>
+        </div>
+        <div class="recycling-content">
+            <div class="recycling-text">
+                <h3>A Better Approach to E-Waste</h3>
+                <p>At Tri-Force, we believe in <strong>preservation over scavenging</strong>. While others strip electronics for raw materials, we focus on extending the life of technology and finding new homes for working equipment.</p>
+                <p>Our approach minimizes environmental harm by reducing the need for destructive material extraction and keeping functional technology out of landfills.</p>
+                <ul class="feature-list">
+                    <li>Refurbishment and redistribution of working computers</li>
+                    <li>Component-level assessment and preservation</li>
+                    <li>Data destruction with certificate of sanitization</li>
+                    <li>Environmentally responsible handling of non-repairable items</li>
+                    <li>Support for vintage and legacy systems</li>
+                </ul>
+            </div>
+            <div class="recycling-visual">
+                <div class="icon">🖥️♻️</div>
+                <h3>Preserve. Restore. Reuse.</h3>
+                <p>Every computer has a story. We help write the next chapter instead of ending it.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="repair">
+        <div class="section-title">
+            <h2>Repair Services</h2>
+            <p>Expert repairs for electronics old and new</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon">📺</div>
+                <h3>Household Electronics</h3>
+                <p>Don't throw it away—let us fix it! We repair everyday electronics to reduce waste and save you money.</p>
+                <ul>
+                    <li>Televisions & monitors</li>
+                    <li>Audio equipment</li>
+                    <li>Small appliances</li>
+                    <li>Gaming consoles</li>
+                    <li>Power supply repairs</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="icon">💾</div>
+                <h3>Vintage Computer Repair</h3>
+                <p>Specialized service for classic and retro computing enthusiasts. We preserve computing history.</p>
+                <ul>
+                    <li>Classic PC restoration</li>
+                    <li>Capacitor replacement</li>
+                    <li>Floppy & hard drive recovery</li>
+                    <li>CRT monitor repair</li>
+                    <li>Period-correct modifications</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="icon">☀️</div>
+                <h3>Solar System Repair</h3>
+                <p>Keep your solar investment performing at its best with our expert maintenance and repair services.</p>
+                <ul>
+                    <li>Inverter diagnostics & repair</li>
+                    <li>Panel inspection & cleaning</li>
+                    <li>Battery system service</li>
+                    <li>Wiring & connection repairs</li>
+                    <li>Performance optimization</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+            <p>Ready to recycle responsibly or need a repair? Send us an email today.</p>
+        </div>
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="icon">📧</div>
+                <h4>Email</h4>
+                <p id="email-display"></p>
+            </div>
+        </div>
+        <div class="service-area">
+            <h3>Service Area</h3>
+            <div class="route-path">
+                <div class="route-stop">
+                    <div class="stop-dot"></div>
+                    <span>Fairplay</span>
+                </div>
+                <div class="route-line"></div>
+                <div class="route-stop">
+                    <div class="stop-dot"></div>
+                    <span>Conifer</span>
+                </div>
+                <div class="route-line"></div>
+                <div class="route-stop">
+                    <div class="stop-dot"></div>
+                    <span>Boulder</span>
+                </div>
+            </div>
+            <p class="route-note">Serving communities along the High Plains through the Front Range corridor</p>
+            <div class="service-area-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d394943.5!2d-105.7!3d39.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x876b0de4a9c1e4a7%3A0x5c252108f30b44a7!2sFairplay%2C+CO!3m2!1d39.2245736!2d-106.0021594!4m5!1s0x876b8d4e278dafd3%3A0xc8393b7ca01b8058!2sBoulder%2C+CO!3m2!1d40.0149856!2d-105.2705456!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Tri-Force. Preserving technology for a sustainable future.</p>
+    </footer>
+    <script>
+        (function() {
+            var p = ['triforcevintage', 'gmail', 'com'];
+            var el = document.getElementById('email-display');
+            var addr = p[0] + '@' + p[1] + '.' + p[2];
+            var link = document.createElement('a');
+            link.href = 'mai' + 'lto:' + addr;
+            link.textContent = addr;
+            link.style.color = 'inherit';
+            link.style.textDecoration = 'none';
+            el.appendChild(link);
+        })();
+    </script>
+</body>
+</html>
