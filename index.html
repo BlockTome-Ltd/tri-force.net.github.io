@@ -171,6 +171,29 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Mobile Recycling Section */
+        #mobile-recycling {
+            background: white;
+        }
+
+        .mobile-recycling-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .mobile-recycling-text h3 {
+            font-size: 1.5rem;
+            color: #1a5f2a;
+            margin-bottom: 1rem;
+        }
+
+        .mobile-recycling-text p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
         /* Repair Section */
         #repair {
             background: white;
@@ -418,6 +441,18 @@
             color: #c0c0c0;
         }
 
+        html[data-theme="dark"] #mobile-recycling {
+            background: #121218;
+        }
+
+        html[data-theme="dark"] .mobile-recycling-text h3 {
+            color: #4caf50;
+        }
+
+        html[data-theme="dark"] .mobile-recycling-text p {
+            color: #c0c0c0;
+        }
+
         html[data-theme="dark"] #repair {
             background: #121218;
         }
@@ -449,7 +484,8 @@
 
         /* Responsive Design */
         @media (max-width: 968px) {
-            .recycling-content {
+            .recycling-content,
+            .mobile-recycling-content {
                 grid-template-columns: 1fr;
             }
 
@@ -497,6 +533,7 @@
             </div>
             <ul>
                 <li><a href="#recycling">Recycling</a></li>
+                <li><a href="#mobile-recycling">Mobile Recycling</a></li>
                 <li><a href="#repair">Repair Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -534,6 +571,32 @@
                 <div class="icon">🖥️♻️</div>
                 <h3>Preserve. Restore. Reuse.</h3>
                 <p>Every computer has a story. We help write the next chapter instead of ending it.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="mobile-recycling">
+        <div class="section-title">
+            <h2>Mobile Phone Recycling</h2>
+            <p>Responsible recycling and refurbishment for smartphones and tablets</p>
+        </div>
+        <div class="mobile-recycling-content">
+            <div class="recycling-visual">
+                <div class="icon">📱♻️</div>
+                <h3>Don't Drawer It. Restore It.</h3>
+                <p>Millions of old phones sit forgotten in drawers. We give them a purpose again.</p>
+            </div>
+            <div class="mobile-recycling-text">
+                <h3>Your Old Phone Still Has Value</h3>
+                <p>Whether it's a cracked screen, a dead battery, or just an outdated model, your old mobile phone doesn't belong in a landfill. We assess every device for reuse potential before considering material recovery.</p>
+                <p>Phones contain valuable and hazardous materials alike — from rare earth metals to lithium batteries. Proper handling matters.</p>
+                <ul class="feature-list">
+                    <li>Full data wipe with certificate of sanitization</li>
+                    <li>Battery health assessment and safe disposal</li>
+                    <li>Screen and component harvesting for repairs</li>
+                    <li>Refurbishment for donation or resale</li>
+                    <li>Tablets and smartwatches accepted too</li>
+                </ul>
             </div>
         </div>
     </section>
